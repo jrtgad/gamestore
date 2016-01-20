@@ -1,0 +1,3 @@
+while inotifywait -r -e MODIFY ./..;do
+lessc ../less/screen.less > ../css/screen_less.css;
+done;

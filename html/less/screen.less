@@ -1,0 +1,307 @@
+@verdeOscuro: #003C00;
+@verdeClaro: #76b900;
+
+@font-face {
+    font-family: "zekton";
+    src: url('../fonts/Zekton/zekton.ttf');
+}
+
+
+@media screen {
+
+    body {
+        background-color: #363636;
+    }
+
+    main {
+           margin: 0 auto;
+           min-width: 960px;
+           max-width: 960px;
+           font-family: "zekton";
+    }
+
+    .cabecera   {
+            float: left;
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 1em;
+            margin-top: 1em;
+            width: 960px;
+            height: 115px;
+            background: linear-gradient(to right, rgb(0,60,0) 0%, rgb(0,60,0) 35%, rgb(0,0,0) 100%);
+            background: rgb(0,60,0);
+            border-radius: 0.4em;
+            .logo  {
+                float: left;
+                position: relative;
+                top: 0.2em;
+                left: 1em;
+            }
+            .titulo {
+                padding-left: 0.55em;
+                font-size: 5.8em;
+                font-weight: bold;
+                display: inline-block;
+            }
+
+            .titulo2 {
+                font-size: 5.8em;
+                color: white;
+            }
+
+            .login  {
+                display: inline-block;
+                position: relative;
+                top: -3em;
+                margin-top: 0.5em;
+                margin-right: 0;
+                padding-left: 0;
+            }
+
+            .user_img {
+                    width: 5em;
+                    margin-right: 0.3em;
+                    margin-left: 0.3em;
+                    float: left;
+            }
+
+            .login > .boton {
+                    width: 50%;
+                    float: left;
+            }
+
+            .login > .boton + .boton {
+                margin-top: 0.2em;
+            }
+    }
+
+    nav.menu {
+        float: left;
+        width: 960px;
+        height: 1.8em;
+        background-color: @verdeOscuro;
+        font-size: 1.5em;
+        border-radius: 0.2em;
+        margin-bottom: 1em;
+        ul > li  {
+            float: left;
+            width: 18%;
+            margin-left: 0.5em;
+            text-align: center;
+            padding-top: 0.2em;
+            a {
+                vertical-align: middle;
+            }
+            div {
+                width: 100%;
+                position: relative;
+                input {
+                    border-radius: 0.4em;
+                    width: 100%;
+                    height: 1.5em;
+                }
+                img {
+                    width: 0.67em;
+                    position: absolute;
+                    left: 6.7em;
+                    top: 0.35em;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    h1  {
+        font-size: 6em;
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+
+    .cuerpo {
+        position: relative;
+        display: block;
+        clear: both;
+        .autopromo  {
+            margin-top: 1em;
+            height: 20em;
+            display: block;
+            clear: both;
+            cursor: pointer;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .categorias {
+            background-color: gray;
+            margin-top: 1em;
+            li {
+                width: 30%;
+                height: 30%;
+                display: inline-block;
+                padding: 0.9em;
+                h4 {
+                    text-align: center;
+                    background-color: @verdeOscuro;
+                    height: 2em;
+                    padding-top: 0.5em;
+                    cursor: pointer;
+                }
+            }
+            img {
+                cursor: pointer;
+                width: 100%;
+            }
+        }
+        .error {
+            img {
+                width: 960px;
+            }
+        }
+        .registro{
+            display: block;
+            clear: both;
+            background-color: @verdeOscuro;
+            text-align: center;
+            h1 {
+                font-size: 2em;
+                margin: 0.5em;
+            }
+
+            form {
+                display: block;
+                clear: both;
+                ul {
+                    background-color: @verdeOscuro;
+                    li {
+                        height: 2.5em;
+
+                        input {
+                            color: @verdeOscuro;
+                            height: 1.5em;
+                            width: 17em;
+                            text-align: center;
+
+                            &[placeholder] {
+                                color: red;
+                            }
+
+                        }
+                        select {
+                            position: relative;
+                            text-align: center;
+                            left: 4em;
+                        }
+                    }
+                }
+                .izq {
+                    width: 44.5%;
+                    position: relative;
+                    display: inline-block;
+                    font-size: 1em;
+                    float: left;
+                    line-height: 1.55em;
+                    text-align: right;
+                }
+                .dcha {
+                    width: 54.5%;
+                    position: relative;
+                    display: inline-block;
+                    float: right;
+                    position: relative;
+                    text-align: left;
+                }
+                .resto {
+                    display: block;
+                    clear: both;
+                }
+            }
+        }
+    }
+
+    .boton {
+        height: 2em;
+        background-color: @verdeClaro;
+        color: @verdeOscuro;
+        border-color: @verdeOscuro;
+        font-family: "zekton";
+        font-size: 1em;
+        border-radius: 0.4em;
+        cursor: pointer;
+    }
+
+    .rrss {
+        display: block;
+        clear: both;
+        position: relative;
+        ul {
+            li {
+                float: left;
+                background-color: gray;
+                margin-top: 1em;
+                margin-bottom: 1em;
+                width: 14.286%;
+                div {
+                    height: 1.17em;
+                    text-align: center;
+                    background-image: url('../img/icons/iconos.svg');
+                }
+                .xbox {
+                    background-position: 3.5em 0.03em;
+                }
+
+                .steam {
+                    background-position: 3.5em -4.62em;
+                }
+
+                .reddit {
+                    background-position: 3.5em -3.46em;
+                }
+
+                .google {
+                    background-position: 3.5em -5.77em;
+                }
+
+                .twitter {
+                    background-position: 3.5em -2.3em;
+                }
+
+                .facebook {
+                    background-position: 3.5em -6.9em;
+                }
+
+                .youtube {
+                    background-position: 3.5em -1.131em;
+                }
+            }
+        }
+    }
+
+
+    .condiciones {
+        width: 101%;
+        ul > li {
+            text-align: center;
+            float: left;
+            width: 33%;
+            height: 1.4em;
+            background-color: gray;
+            img {
+                height: 1em;
+                padding: 0.1em;
+                cursor: pointer;
+            }
+            span {
+                text-align: center;
+                cursor: pointer;
+                color: @verdeOscuro;
+            }
+        }
+    }
+    .copyright {
+        text-align: center;
+        color: @verdeClaro;
+        padding-top: 0.2em;
+        cursor: default;
+    }
+}
