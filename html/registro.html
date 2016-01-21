@@ -74,15 +74,15 @@
                     </div>
                     <div class="dcha">
                         <ul id="inputsForm">
-                            <li><input type="text" name="data[userName]" id="userName" placeholder="* Introduzca solo letras o guiones" required></li>
-                            <li><input type="text" name="data[userMail]" id="userMail" placeholder="* Ej: algo@algo.resto" required></li>
-                            <li><input type="text" name="data[pass]" id="pass" placeholder="* Letras y nºs, mínimo 6 caracteres" required></li>
-                            <li><input type="text" name="data[passConfirmation]" id="passConfirmation" required placeholder="* Repita la contraseña"></li>
+                            <li><input type="text" name="data[userName]" id="userName" placeholder="Introduzca solo letras o guiones" class="required"></li>
+                            <li><input type="text" name="data[userMail]" id="userMail" placeholder="Ej: algo@algo.resto"  class="required"></li>
+                            <li><input type="text" name="data[pass]" id="pass" placeholder="Letras y nºs, mínimo 6 caracteres"  class="required"></li>
+                            <li><input type="text" name="data[passConfirmation]" id="passConfirmation"  class="required" placeholder="* Repita la contraseña"></li>
                             <li>
                                 <input type="checkbox"
                                     name="data[siteConditions]"
-                                    value="Acepto las condiciones de uso"
-                                    class="checkbox_reg" id="">
+                                    value="AcceptConditions"
+                                    class="checkbox_reg" id="" class="required">
                             </li>
                             <li><input type="text" name="data[url]" id="url"></li>
                             <li><input type="text" name="data[address]" id="address"></li>
@@ -104,8 +104,8 @@
                     </div><br/><br/>
                     <div class="resto">
                         <br/><br/>
-                        <input type="reset" value="Limpiar" class="boton">
-                        <input type="submit" value="Registrarse" class="boton">
+                        <input type="button" id="limpiar" value="Limpiar" class="boton">
+                        <input type="button" id="submit" value="Registrarse" class="boton">
                         <br/><br/>
                     </div>
                 </form>

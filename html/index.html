@@ -11,8 +11,9 @@
     <link rel="icon" href="../html/img/Logo.png">
     <link rel="stylesheet" href="../html/css/screen.css">
     <link rel="stylesheet" href="../html/css/reset.css">
-    <script type="text/javascript" src="../html/lib/front-end.min.js"></script>
+    <link type="text/javascript" href="../html/js/prefix_free.js">
     <link type="text/plain" rel="author" href="humans.txt" />
+    <!--<script type="text/javascript" href="../html/js/video.js"></script>-->
 </head>
 <body>
     <main>
@@ -57,60 +58,69 @@
         </nav>
 
         <section class="cuerpo">
-            <div class="registro">
-                <h1>NUEVO USUARIO</h1>
-                <form>
-                    <div class="izq">
-                        <ul id="titlesForm">
-                            <li>Nombre y apellidos:</li>
-                            <li>Dirección de e-mail:</li>
-                            <li>Contraseña:</li>
-                            <li>Repita la contraseña:</li>
-                            <li>Acepto las condiciones de uso:</li>
-                            <li>Dirección web:</li>
-                            <li>Dirección domicilio:</li>
-                            <li>País:</li>
-                        </ul>
-                    </div>
-                    <div class="dcha">
-                        <ul id="inputsForm">
-                            <li><input type="text" name="data[userName]" id="userName" placeholder="* Introduzca solo letras o guiones" required></li>
-                            <li><input type="text" name="data[userMail]" id="userMail" placeholder="* Ej: algo@algo.resto" required></li>
-                            <li><input type="text" name="data[pass]" id="pass" placeholder="* Letras y nºs, mínimo 6 caracteres" required></li>
-                            <li><input type="text" name="data[passConfirmation]" id="passConfirmation" required placeholder="* Repita la contraseña"></li>
-                            <li>
-                                <input type="checkbox"
-                                    name="data[siteConditions]"
-                                    value="Acepto las condiciones de uso"
-                                    class="checkbox_reg" id="">
-                            </li>
-                            <li><input type="text" name="data[url]" id="url"></li>
-                            <li><input type="text" name="data[address]" id="address"></li>
-                            <li>
-                                <select name="data[country]" id="country">
-                                    <option value="ger">Alemania</option>
-                                    <option value="bel">Bélgica</option>
-                                    <option value="den">Dinamarca</option>
-                                    <option value="spa">España</option>
-                                    <option value="fra">Francia</option>
-                                    <option value="gre">Grecia</option>
-                                    <option value="hol">Holanda</option>
-                                    <option value="ita">Italia</option>
-                                    <option value="swe">Suecia</option>
-                                    <option value="uk">Reino Unido</option>
-                                </select>
-                            </li>
-                        </ul>
-                    </div><br/><br/>
-                    <div class="resto">
-                        <br/><br/>
-                        <input type="reset" value="Limpiar" class="boton">
-                        <input type="submit" value="Registrarse" class="boton">
-                        <br/><br/>
-                    </div>
-                </form>
-            </div>
+            <section class="autopromo" id="autopromo">
+                <div id="fotopromo">
+                    <img src="../html/img/Fotos/autopromo/nba16.jpg" id="nba" alt="NBA 2K 2016">
+                    <img src="../html/img/Fotos/Accion/GTA.jpg" id="gta" alt="GTA V">
+                    <img src="../html/img/Fotos/Aventuras/monkeyisland.jpg" id="monkey" alt="Monkey Island">
+                    <img src="../html/img/Fotos/Rogue-Like/tboi.png" id="isaac" alt="The binding of Isaac">
+                </div>
+            </section>
+            <ul class="categorias">
+                <li id="acción">
+                    <h4>Acción</h4>
+                    <img src="../html/img/Fotos/Accion/GTA.jpg" alt="GTA V">
+                </li>
+                <li id="aventura">
+                    <h4>Aventura</h4>
+                    <img src="../html/img/Fotos/Aventuras/monkeyisland.jpg" alt="Monkey Island">
+                </li>
+                <li id="carreras">
+                    <h4>Carreras</h4>
+                    <img src="../html/img/Fotos/Carreras/dirt3.jpg" alt="Dirt 3">
+                </li>
+                <li id="deportes">
+                    <h4>Deportes</h4>
+                    <img src="../html/img/Fotos/Deportes/fifa16.jpg" alt="Fifa 16">
+                </li>
+                <li id="estrategia">
+                    <h4>Estrategia</h4>
+                    <img src="../html/img/Fotos/Estrategia/starcraft2.jpg" alt="Starcraft 2">
+                </li>
+                <li id="rogue-like">
+                    <h4>Rogue-Like</h4>
+                    <img src="../html/img/Fotos/Rogue-Like/tboi.png" alt="The Binding of Isaac">
+                </li>
+                <li id="rol">
+                    <h4>Rol</h4>
+                    <img src="../html/img/Fotos/Rol/fallout4.jpg" alt="Fallout 4">
+                </li>
+                <li id="simuladores">
+                    <h4>Simuladores</h4>
+                    <img src="../html/img/Fotos/Simuladores/cities.jpg" alt="Cities Skyline">
+                </li>
+                <li id="terror">
+                    <h4>Terror</h4>
+                    <img src="../html/img/Fotos/Terror/Deadspace3.png" alt="Dead Space 3">
+                </li>
+            </ul>
         </section>
+        <!--<section id="videoBox">
+            <video id="video">
+                <source type="video/webm" src="../html/video/Huskies.webm">
+                <source type="video/mpeg" src="../html/video/Huskies.mpeg">
+                <source type="video/ogg"  src="../html/video/Huskies.ogg">
+                Su reproductor no soporta los formatos de video,<br>
+                para descargarlo pulse
+                <a href="video/Huskies.webm">aquí</a>;
+            </video>
+            <input type="range" id="bar">
+            <section id="controles">
+                <img id="play">
+                <img id="volup">
+                <img id="voldown">
+            </section>
+    </section>-->
 
         <footer>
             <section class="rrss">
