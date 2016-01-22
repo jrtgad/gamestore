@@ -1,14 +1,14 @@
 "use strict";
 
 var globals = function (ns) {
-    ns.NAME_PATTERN = /^[a-zñ]+(?:\s[a-zñ]+)+$/i;
+    ns.NAME_PATTERN = /^[a-zñ\-\'\.]+(?:\s[a-zñ\-\'\.]+)+$/i;
     ns.MAIL_PATTERN = /^[\w.]+@[\w.]+\.[\w]{2,6}$/i;
     ns.PASS_PATTERN = /^.*(?=.{6,})(?!.*\s)(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\!\@\#\$\%\^\&\*\(\)\-\=\¡\£\_\+\`\~\.\,\<\>\/\?\;\:\'\"\\\|\[\]\{\}]).*$/;
     ns.URL_PATTERN = /^(http:\/\/|https:\/\/|www.|ftp:\/\/).+[a-z]{2,4}$/i;
     ns.COUNTRIES = [
         "Alemania", "Bélgica", "Dinamarca", "España", "Francia", "Grecia", "Holanda", "Italia", "Suecia", "Reino Unido"
     ];
-    ns.INPUTS = ["userName" /*, "userMail", "pass", "passConfirmation", "checkbox"*/ ];
+    ns.INPUTS = ["userName", "userMail", "pass", "passConfirmation", "checkbox"];
     ns.ERROR = "Rellene correctamente los campos";
     ns.validatePattern = function (pattern, input) {
         if (input.value.length === 0) {
@@ -22,7 +22,6 @@ var globals = function (ns) {
         }
     };
 
-
     /** Si el obj tenia clase required, la respeta */
     ns.requiredClass = function (input, setClass) {
         if (input.className.match("(\\s|^)required(\\s|$)")) {
@@ -33,9 +32,15 @@ var globals = function (ns) {
     };
     ns.validate = function () {
         if (!!globals.INPUTS.every(function (element) {
-            $(element).className.match("(\\s|^)valid(\\s|$)");
-        }) && $("checkbox").checked) {
+            return $(element).className.match("(\\s|^)valid(\\s|$)");
+        })) {
+            var p = document.createElement("p");
+            p.id = "guardado",
+            p.className = "modalWindow";
+            p.innerHTML = "Su información ha sido guardada";
             document.forms[1].submit();
+            //$("login").appendChild(p);
+
         } else {
             if ($("error")) {
                 $("registro").removeChild($("error"));
@@ -75,7 +80,7 @@ function confirmPass() {
         $("passConfirmation").className = "required reset";
     } else {
         if ($("pass").value !== $("passConfirmation").value) {
-            $("passConfirmation").className = "invalid required ";
+            $("passConfirmation").className = "invalid required";
         } else {
             $("passConfirmation").className = "valid required ";
         }
@@ -137,7 +142,7 @@ function addEvents() {
     $("pass").addEventListener("keyup", validatePass, false);
     $("url").addEventListener("keyup", validateURL, false);
     $("passConfirmation").addEventListener("keyup", confirmPass, false);
-    //$("checkbox").addEventListener("change", checkEnabled, false);
+    $("checkbox").addEventListener("change", checkEnabled, false);
     $("send").addEventListener("click", globals.validate, false);
 }
 

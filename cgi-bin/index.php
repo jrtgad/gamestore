@@ -8,23 +8,14 @@
         $data = $_POST['data'];
         $msg = "Su información ha sido guardada";
 
-        $string = "Usuario: " + $data['userName'] + "\n";
-        $string += "E-mail: " + $data['userMail'] + "\n";
-        $string += "Contraseña: " + $data['pass'] + "\n";
-        $string += "Confirmacion: " + $data['passConfirmation'] + "\n";
-        if(isset($data["url"])) {
-            $string += "URL: " + $data['url'] + "\n";
-        }
-        if(isset($data["address"])) {
-            $string += "Direccion: " + $data['address'] + "\n";
-        }
-        if(isset($data["country"])) {
-            $string += "Pais: " + $data['country'] + "\n";
-        }
-        if(isset($data["postalCode"])) {
-            $string += "Codigo postal: " + $data['postalCode'] + "\n";
-        }
-        $fp = fopen(+'.txt', 'w');
+        $string = "Usuario: " . $data['userName'] . "\n";
+        $string .= "E-mail: " . $data['userMail'] . "\n";
+        $string .= "Contraseña: " . sha1($data['pass']) . "\n";
+        $string .= "URL: " . $data['url'] . "\n";
+        $string .= "Direccion: " . $data['address'] . "\n";
+        $string .= "Pais: " . $data['country'] . "\n";
+        $string .= "Codigo postal: " . $data['postalCode'] . "\n";
+        $fp = fopen(str_replace(" ","_",$data['userName']) . time() .'.txt', 'w');
         fwrite($fp, $string);
         fclose($fp);
 
