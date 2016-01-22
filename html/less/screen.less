@@ -1,6 +1,7 @@
 @verdeOscuro: #003C00;
 @verdeClaro: #76b900;
 @valid: #17DB5B;
+@invalid: #CE2828;
 
 .animacionGiro() {
     animation-name: giro;
@@ -94,11 +95,10 @@
     body {
         background-color: #363636;
 
+        * {
+                outline: none;
+        }
     }
-
-    * {
-            outline: none;
-   }
 
     main {
            margin: 0 auto;
@@ -209,6 +209,7 @@
         position: relative;
         display: block;
         clear: both;
+
         .autopromo  {
             margin-top: 1em;
             height: 25em;
@@ -227,8 +228,6 @@
                     width: 960px;
                     height: 25em;
                     .animacionBanner();
-                    &#nba {
-                    }
                     &#gta {
                         left: 960px;
                     }
@@ -273,6 +272,19 @@
             clear: both;
             background-color: @verdeOscuro;
             text-align: center;
+            height: 30em;
+
+            .modalWindow {
+                position: relative;
+                display: inline-block;
+                overflow: visible;
+                z-index: 12;
+                opacity: 0.4;
+                font-size: 2em;
+                background-color: @verdeClaro;
+                color: @verdeOscuro;
+            }
+
             h1 {
                 font-size: 2em;
                 margin: 0.5em;
@@ -291,25 +303,55 @@
                             height: 1.5em;
                             width: 17em;
                             text-align: center;
-
-                            /*&.required {
-                                background: #FFFFFF url(../img/icons/required.png) no-repeat 98% center;
-                            }
-
-                            &.valid {
-                                background-color: @valid;
-
-                            }
-
-                            &.invalid {
-                                background-color: @Invalid;
-                            }*/
-
+                            border: 1px solid @verdeClaro;
+                            border-radius: 0.4em;
                         }
-                        select {
+                        img {
+                            width: 0.5em;
+                            height: 0.5em;
+                        }
+
+                        .required::after {
+                            content: url(../img/icons/required.png);
+                            overflow: visible;
                             position: relative;
+                            background: white url(../img/icons/required.png) no-repeat 98%;
+                            background-size:  0.8em 0.8em;
+                        }
+
+                        .valid {
+                            background-color: @valid;
+                            border: 3px solid DarkGreen;
+                            border-radius: 0.4em;
+                            color: black;
+                        }
+
+                        .reset {
+                            color: @verdeOscuro;
                             text-align: center;
-                            left: 4em;
+                            background-color: white;
+                            border: 1px solid @verdeClaro;
+                            border-radius: 0.4em;
+                        }
+
+                        .invalid {
+                            background-color: @invalid;
+                            border: 3px solid DarkRed;
+                            border-radius: 0.4em;
+                            color: white;
+                        }
+                    }
+                    select {
+                        position: relative;
+                        text-align: center;
+                        left: 5em;
+                        color: @verdeClaro;
+                        background-color: @verdeOscuro;
+                        border: 3px solid @verdeClaro;
+
+                        option {
+                            color: @verdeClaro;
+                            background-color: @verdeOscuro;
                         }
                     }
                 }

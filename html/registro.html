@@ -11,7 +11,7 @@
     <link rel="icon" href="../html/img/Logo.png">
     <link rel="stylesheet" href="../html/css/screen.css">
     <link rel="stylesheet" href="../html/css/reset.css">
-    <script type="text/javascript" src="../html/lib/front-end.min.js"></script>
+    <script type="text/javascript" src="../html/js/front-end.js"></script>
     <link type="text/plain" rel="author" href="humans.txt" />
 </head>
 <body>
@@ -57,7 +57,7 @@
         </nav>
 
         <section class="cuerpo">
-            <div class="registro">
+            <div class="registro" id="registro">
                 <h1>NUEVO USUARIO</h1>
                 <form>
                     <div class="izq">
@@ -74,38 +74,27 @@
                     </div>
                     <div class="dcha">
                         <ul id="inputsForm">
-                            <li><input type="text" name="data[userName]" id="userName" placeholder="Introduzca solo letras o guiones" class="required"></li>
+                            <li><input type="text" name="data[userName]" id="userName" placeholder="Introduzca sólo letras o guiones" class="required"></li>
                             <li><input type="text" name="data[userMail]" id="userMail" placeholder="Ej: algo@algo.resto"  class="required"></li>
-                            <li><input type="text" name="data[pass]" id="pass" placeholder="Letras y nºs, mínimo 6 caracteres"  class="required"></li>
-                            <li><input type="text" name="data[passConfirmation]" id="passConfirmation"  class="required" placeholder="* Repita la contraseña"></li>
+                            <li><input type="text" name="data[pass]" id="pass" placeholder="Ej: 1$abcABC"  class="required"></li>
+                            <li><input type="text" name="data[passConfirmation]" id="passConfirmation" class="required" placeholder="Repita la contraseña"></li>
                             <li>
                                 <input type="checkbox"
                                     name="data[siteConditions]"
                                     value="AcceptConditions"
-                                    class="checkbox_reg" id="" class="required">
+                                    class="required" id="checkbox" class="required">
                             </li>
                             <li><input type="text" name="data[url]" id="url"></li>
                             <li><input type="text" name="data[address]" id="address"></li>
                             <li>
-                                <select name="data[country]" id="country">
-                                    <option value="ger">Alemania</option>
-                                    <option value="bel">Bélgica</option>
-                                    <option value="den">Dinamarca</option>
-                                    <option value="spa">España</option>
-                                    <option value="fra">Francia</option>
-                                    <option value="gre">Grecia</option>
-                                    <option value="hol">Holanda</option>
-                                    <option value="ita">Italia</option>
-                                    <option value="swe">Suecia</option>
-                                    <option value="uk">Reino Unido</option>
-                                </select>
+                                <select name="data[country]" id="country"></select>
                             </li>
                         </ul>
                     </div><br/><br/>
                     <div class="resto">
                         <br/><br/>
                         <input type="button" id="limpiar" value="Limpiar" class="boton">
-                        <input type="button" id="submit" value="Registrarse" class="boton">
+                        <input type="button" id="send" value="Registrarse" class="boton">
                         <br/><br/>
                     </div>
                 </form>

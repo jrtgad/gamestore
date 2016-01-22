@@ -1,43 +1,83 @@
+"use strict";
+
+var globals = function (ns) {
+    ns.NAME_PATTERN = /^[a-zñ]+(?:\s[a-zñ]+)+$/i;
+    ns.MAIL_PATTERN = /^[\w.]+@[\w.]+\.[\w]{2,6}$/i;
+    ns.PASS_PATTERN = /^.*(?=.{6,})(?!.*\s)(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\!\@\#\$\%\^\&\*\(\)\-\=\¡\£\_\+\`\~\.\,\<\>\/\?\;\:\'\"\\\|\[\]\{\}]).*$/;
+    ns.URL_PATTERN = /^(http:\/\/|https:\/\/|www.|ftp:\/\/).+[a-z]{2,4}$/i;
+    ns.COUNTRIES = [
+        "Alemania", "Bélgica", "Dinamarca", "España", "Francia", "Grecia", "Holanda", "Italia", "Suecia", "Reino Unido"
+    ];
+    ns.INPUTS = ["userName" /*, "userMail", "pass", "passConfirmation", "checkbox"*/ ];
+    ns.ERROR = "Rellene correctamente los campos";
+    ns.validatePattern = function (pattern, input) {
+        if (input.value.length === 0) {
+            globals.requiredClass(input, "reset");
+        } else {
+            if (pattern.test(input.value)) {
+                globals.requiredClass(input, "valid");
+            } else {
+                globals.requiredClass(input, "invalid");
+            }
+        }
+    };
+
+
+    /** Si el obj tenia clase required, la respeta */
+    ns.requiredClass = function (input, setClass) {
+        if (input.className.match("(\\s|^)required(\\s|$)")) {
+            input.className = "required " + setClass;
+        } else {
+            input.className = setClass;
+        }
+    };
+    ns.validate = function () {
+        if (!!globals.INPUTS.every(function (element) {
+            $(element).className.match("(\\s|^)valid(\\s|$)");
+        }) && $("checkbox").checked) {
+            document.forms[1].submit();
+        } else {
+            if ($("error")) {
+                $("registro").removeChild($("error"));
+            }
+            var p = document.createElement("p");
+            p.id = "error",
+            p.className = "modalWindow";
+            p.innerHTML = globals.ERROR;
+            $("registro").appendChild(p);
+        }
+    }
+    return ns;
+}({});
+
 function $(id) {
     return document.getElementById(id);
 }
 
-function validatePattern(pattern, input) {
-    if (input.value.length === 0) {
-        input.className = "reset";
-    } else {
-        if (pattern.test(input.value)) {
-            input.className = "green";
-        } else {
-            input.className = "red";
-        }
-    }
-}
-
 function validateName() {
-    var pattern = new RegExp("^[a-z]*.[a-z]*$", "i");
-    validatePattern(pattern, $("userName"));
+    globals.validatePattern(globals.NAME_PATTERN, $("userName"));
 }
 
 function validateMail() {
-    var pattern = new RegExp("^[a-z0-9|0-9a-z]+@[a-z0-9|0-9a-z]+\.(com|es|biz|org)+$", "i");
-    validatePattern(pattern, $("userMail"));
+    globals.validatePattern(globals.MAIL_PATTERN, $("userMail"));
 }
 
 function validatePass() {
-    var pattern =
-        new RegExp("^[a-zA-Z0-9.]+{6,13}$");
-    validatePattern(pattern, $("pass"));
+    globals.validatePattern(globals.PASS_PATTERN, $("pass"));
+}
+
+function validateURL() {
+    globals.validatePattern(globals.URL_PATTERN, $("url"));
 }
 
 function confirmPass() {
     if ($("passConfirmation").value === "" || $("pass").value === "") {
-        $("passConfirmation").className = "reset";
+        $("passConfirmation").className = "required reset";
     } else {
         if ($("pass").value !== $("passConfirmation").value) {
-            $("passConfirmation").className = "red";
+            $("passConfirmation").className = "invalid required ";
         } else {
-            $("passConfirmation").className = "green";
+            $("passConfirmation").className = "valid required ";
         }
     }
 }
@@ -51,7 +91,7 @@ function checkCountry() {
     cp.name = "postalCode";
     li.appendChild(document.createTextNode("Código Postal"));
 
-    if ($("country").value === "spa") {
+    if ($("country").value === "es") {
         $("titlesForm").appendChild(li);
         $("inputsForm").appendChild(cp);
         $("postalCode").addEventListener("keyup", validatePostalCode, false);
@@ -64,10 +104,10 @@ function checkCountry() {
 }
 
 function getCheckState() {
-    if ($("siteConditions").unchecked) {
-        $("siteConditions").className = "red";
+    if ($("siteConditioglobals").unchecked) {
+        $("siteConditioglobals").className = "invalid";
     } else {
-        $("siteConditions").className = "green";
+        $("siteConditioglobals").className = "valid";
     }
 }
 
@@ -76,13 +116,29 @@ function validatePostalCode() {
     validatePattern(pattern, $("postalCode"));
 }
 
+function appendSelectCountry() {
+    globals.COUNTRIES.forEach(function (x) {
+        var option = document.createElement("option");
+        option.innerHTML = x;
+        option.value = x.substring(0, 2).toLowerCase();
+        $("country").appendChild(option);
+    });
+}
+
+function checkEnabled() {
+    $("checkbox").checked ? $("checkbox").className = "valid" : $("checkbox").className = "invalid";
+}
+
 function addEvents() {
+    appendSelectCountry();
     $("userName").addEventListener("keyup", validateName, false);
     $("userMail").addEventListener("keyup", validateMail, false);
     $("country").addEventListener("change", checkCountry, false);
     $("pass").addEventListener("keyup", validatePass, false);
+    $("url").addEventListener("keyup", validateURL, false);
     $("passConfirmation").addEventListener("keyup", confirmPass, false);
-    //$("siteConditions").addEventListener("change", getCheckState, false);
+    //$("checkbox").addEventListener("change", checkEnabled, false);
+    $("send").addEventListener("click", globals.validate, false);
 }
 
 window.onload = addEvents;
