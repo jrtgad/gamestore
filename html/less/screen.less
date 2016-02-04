@@ -1,5 +1,6 @@
 @verdeOscuro: #003C00;
 @verdeClaro: #76b900;
+@fondo: #808080;
 
 .animacionGiro() {
     animation-name: giro;
@@ -204,8 +205,13 @@
         margin-right: 1em;
     }
 
-    section.ofertas{
-        background-color: 
+    .section{
+        background-color: @fondo;
+        li {
+            display: block;
+            width: 30%;
+            text-align: center;
+        }
     }
 
     .cuerpo {
