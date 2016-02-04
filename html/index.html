@@ -1,37 +1,34 @@
 <!doctype html>
 <html lang="es-ES">
+
 <head>
     <meta charset="utf-8">
     <title>GameStore</title>
-    <meta name="description"
-        content="Servicio de venta de videojuegos">
+    <meta name="description" content="Servicio de venta de videojuegos">
     <meta name="keywords" content="juegos pc">
     <meta name="autor" content="Javier Ruiz-Toledo Gallego">
     <!-- Place favicon.ico in the root directory -->
-    <link rel="icon" href="../html/img/Logo.png">
-    <link rel="stylesheet" href="../html/css/screen.css">
-    <link rel="stylesheet" href="../html/css/reset.css">
-    <link type="text/javascript" href="../html/js/prefix_free.js">
+    <link rel="icon" href="img/Logo.png">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/screen.css">
     <link type="text/plain" rel="author" href="humans.txt" />
-    <!--<script type="text/javascript" href="../html/js/video.js"></script>-->
 </head>
+
 <body>
     <main>
         <header class="cabecera">
-            <a href="../html/index.html">
+            <a href="index.html">
                 <figure class="logo">
-                    <img src="../html/img/Logo.png" alt="Logo empresa">
+                    <img src="img/Logo.png" alt="Logo empresa">
                 </figure>
             </a>
-            <a href="../html/index.html" class="titulo">
+            <a href="index.html" class="titulo">
                 Game</a>
             <a class="titulo2" href="index.html">Store</a>
-            <section class="login" id="login">
-                <form action="../cgi-bin/index.php" method="POST">
-                    <img src="../html/img/icons/user.png" alt="Imagen user" class="user_img">
-                    <input type="button" class="boton" value="Iniciar sesión">
-                    <input type="submit" class="boton" name="registro" value="Registrarse">
-                </form>
+            <section class="login">
+                <img src="img/icons/user.png" alt="Imagen user" class="user_img">
+                <input type="button" class="boton" value="Iniciar sesión">
+                <input type="button" class="boton" value="Registrarse">
             </section>
         </header>
         <nav class="menu">
@@ -51,77 +48,114 @@
                 <li class="menu_buscar">
                     <div class="search_input">
                         <input type="text">
-                        <img src="../html/img/icons/search.png" alt="Lupa">
+                        <img src="img/icons/search.png" alt="Lupa">
                     </div>
                 </li>
             </ul>
         </nav>
-
+        <section id="ofertas">
+            <ul class="cuerpo">
+                Ofertas
+                <a href="#">
+                    <li>
+                        <div>
+                            <img href="./img/Fotos/Rogue-Like/tboi.png" alt="The binding of Isaac"></img>
+                        </div>
+                    </li>
+                </a>
+                <a href="#">
+                    <li>
+                        <div>
+                            <img href="./img/Fotos/Rogue-Like/tboi.png" alt="The binding of Isaac"></img>
+                        </div>
+                    </li>
+                </a>
+                <a href="#">
+                    <li>
+                        <div>
+                            <img href="./img/Fotos/Rogue-Like/tboi.png" alt="The binding of Isaac"></img>
+                        </div>
+                    </li>
+                </a>
+            </ul>
+            <a href="#">
+                <ul>
+                    <li>
+                        <div>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                        </div>
+                    </li>
+                </ul>
+            </a>
+            <a href="#">
+                <ul>
+                    <li>
+                        <div>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                        </div>
+                    </li>
+                </ul>
+            </a>
+        </section>
+        <section id="novedades">
+        </section>
         <section class="cuerpo">
-            <section class="autopromo" id="autopromo">
-                <div id="fotopromo">
-                    <img src="../html/img/Fotos/autopromo/nba16.jpg" id="nba" alt="NBA 2K 2016">
-                    <img src="../html/img/Fotos/Accion/GTA.jpg" id="gta" alt="GTA V">
-                    <img src="../html/img/Fotos/Aventuras/monkeyisland.jpg" id="monkey" alt="Monkey Island">
-                    <img src="../html/img/Fotos/Rogue-Like/tboi.png" id="isaac" alt="The binding of Isaac">
-                </div>
-            </section>
+            <!--<section class="autopromo">
+                <img src="img/Fotos/autopromo/nba16.jpg" height="353" alt="Autopromoción">
+            </section>-->
             <ul class="categorias">
                 <li id="acción">
                     <h4>Acción</h4>
-                    <img src="../html/img/Fotos/Accion/GTA.jpg" alt="GTA V">
+                    <img src="img/Fotos/Accion/GTA.jpg" alt="GTA V">
                 </li>
                 <li id="aventura">
                     <h4>Aventura</h4>
-                    <img src="../html/img/Fotos/Aventuras/monkeyisland.jpg" alt="Monkey Island">
+                    <img src="img/Fotos/Aventuras/monkeyisland.jpg" alt="Monkey Island">
                 </li>
                 <li id="carreras">
                     <h4>Carreras</h4>
-                    <img src="../html/img/Fotos/Carreras/dirt3.jpg" alt="Dirt 3">
+                    <img src="img/Fotos/Carreras/dirt3.jpg" alt="Dirt 3">
                 </li>
                 <li id="deportes">
                     <h4>Deportes</h4>
-                    <img src="../html/img/Fotos/Deportes/fifa16.jpg" alt="Fifa 16">
+                    <img src="img/Fotos/Deportes/fifa16.jpg" alt="Fifa 16">
                 </li>
                 <li id="estrategia">
                     <h4>Estrategia</h4>
-                    <img src="../html/img/Fotos/Estrategia/starcraft2.jpg" alt="Starcraft 2">
+                    <img src="img/Fotos/Estrategia/starcraft2.jpg" alt="Starcraft 2">
                 </li>
                 <li id="rogue-like">
                     <h4>Rogue-Like</h4>
-                    <img src="../html/img/Fotos/Rogue-Like/tboi.png" alt="The Binding of Isaac">
+                    <img src="img/Fotos/Rogue-Like/tboi.png" alt="The Binding of Isaac">
                 </li>
                 <li id="rol">
                     <h4>Rol</h4>
-                    <img src="../html/img/Fotos/Rol/fallout4.jpg" alt="Fallout 4">
+                    <img src="img/Fotos/Rol/fallout4.jpg" alt="Fallout 4">
                 </li>
                 <li id="simuladores">
                     <h4>Simuladores</h4>
-                    <img src="../html/img/Fotos/Simuladores/cities.jpg" alt="Cities Skyline">
+                    <img src="img/Fotos/Simuladores/cities.jpg" alt="Cities Skyline">
                 </li>
                 <li id="terror">
                     <h4>Terror</h4>
-                    <img src="../html/img/Fotos/Terror/Deadspace3.png" alt="Dead Space 3">
+                    <img src="img/Fotos/Terror/Deadspace3.png" alt="Dead Space 3">
                 </li>
             </ul>
         </section>
-        <!--<section id="videoBox">
-            <video id="video">
-                <source type="video/webm" src="../html/video/Huskies.webm">
-                <source type="video/mpeg" src="../html/video/Huskies.mpeg">
-                <source type="video/ogg"  src="../html/video/Huskies.ogg">
-                Su reproductor no soporta los formatos de video,<br>
-                para descargarlo pulse
-                <a href="video/Huskies.webm">aquí</a>;
-            </video>
-            <input type="range" id="bar">
-            <section id="controles">
-                <img id="play">
-                <img id="volup">
-                <img id="voldown">
-            </section>
-    </section>-->
-
         <footer>
             <section class="rrss">
                 <ul>
@@ -132,60 +166,59 @@
                         <div class="steam"></div>
                     </li>
                     <li>
-                       <div class="reddit"></div>
-                   </li>
-                   <li>
-                       <div class="google"></div>
+                        <div class="reddit"></div>
                     </li>
                     <li>
-                       <div class="twitter"></div>
+                        <div class="google"></div>
                     </li>
                     <li>
-                       <div class="facebook"></div>
+                        <div class="twitter"></div>
                     </li>
                     <li>
-                       <div class="youtube"></div>
+                        <div class="facebook"></div>
+                    </li>
+                    <li>
+                        <div class="youtube"></div>
                     </li>
                 </ul>
-                </section>
-                <section class="condiciones">
-                    <ul>
-                        <li><span>Aviso legal</span></li>
-                        <li><span>Privacidad</span></li>
-                        <li><span>Condiciones de venta</span></li>
-                        <li><span>Contacto</span></li>
-                        <li><span>Métodos de pago</span></li>
-                        <li><span>Derechos de uso</span></li>
-                        <li><span>Devoluciones</span></li>
-                        <li>
-                            <article class="tarjetas">
-                                <img src="../html/img/pago/Paypal.png" alt="Paypal">
-                                <img src="../html/img/pago/maestro.jpg" alt="Maestro">
-                                <img src="../html/img/pago/MasterCard.png" alt="Mastercard">
-                                <img src="../html/img/pago/visa.png" alt="Visa">
-                            </article>
-                        </li>
-                        <li><span>Sube tu juego</span></li>
-                    </ul>
-                </section>
-                <section class="copyright">
-                    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
-                        <img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" />
-                    </a>
-                    <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">
+            </section>
+            <section class="condiciones">
+                <ul>
+                    <li><span>Aviso legal</span></li>
+                    <li><span>Privacidad</span></li>
+                    <li><span>Condiciones de venta</span></li>
+                    <li><span>Contacto</span></li>
+                    <li><span>Métodos de pago</span></li>
+                    <li><span>Derechos de uso</span></li>
+                    <li><span>Devoluciones</span></li>
+                    <li>
+                        <article class="tarjetas">
+                            <img src="img/pago/Paypal.png" alt="Paypal">
+                            <img src="img/pago/maestro.jpg" alt="Maestro">
+                            <img src="img/pago/MasterCard.png" alt="Mastercard">
+                            <img src="img/pago/visa.png" alt="Visa">
+                        </article>
+                    </li>
+                    <li><span>Sube tu juego</span></li>
+                </ul>
+            </section>
+            <section class="copyright">
+                <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+                    <img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" />
+                </a>
+                <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">
                         GameStore
-                    </span>
-                        by
-                     <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">
+                    </span> by
+                <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">
                         Javier Ruiz-Toledo
-                    </span>
-                        is licensed under a
-                    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+                    </span> is licensed under a
+                <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
                         Creative Commons Reconocimiento 4.0 Internacional License
-                    </a><br />
-                        Octubre 2015 GameStore S.L. Todos los derechos reservados
-                </section>
+                    </a>
+                <br /> Octubre 2015 GameStore S.L. Todos los derechos reservados
+            </section>
         </footer>
     </main>
 </body>
+
 </html>
